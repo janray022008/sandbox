@@ -6,6 +6,17 @@ var Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('showcase', {
+    path: '/:showcaseName'
+  }, function() {
+    this.route('gig', {
+      path: '/:gigName'
+    }, function() {});
+
+    this.route('newGig', {
+      path: '/gig/new'
+    });
+  });
 });
 
 export default Router;
